@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css grid with fractional units</title>
+</head>
+<body>
+        <style>
+                .wrapper{
+                    display: grid;
+                    grid-template-columns: 1fr 2fr 1fr;
+                    grid-auto-rows: minmax(100px,auto);
+                    grid-gap: 1em;
+                    justify-items: stretch;
+                    /* justify also has "start" "center" and "end"  does all items*/
+                    align-items: stretch;
+                    /* align also has "start" "center" and "end" */
+                }
+                .wrapper > div{
+                    padding: 1em;
+                    background: #eee;
+                }
+                .wrapper > div:nth-child(odd){
+                    background: #ddd;
+                }
+                /*You can target single items to align "end center start strech with both justify and align"*/
+                .box-1{
+                    align-self: start;
+                }
+                .box-2{
+                    align-self: center;
+                }
+                .box-3{
+                    justify-self: end;
+                }
+                .box-4{
+                    justify-self: start;
+                }
+        </style>
+
+    <div class="wrapper">
+        <div class="box-1">Box 1</div>
+        <div class="box-2">Box 2</div>
+        <div class="box-3">Box 3</div>
+        <div class="box-4">Box 4</div>
+    </div>
+</body>
+</html>
