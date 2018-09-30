@@ -22,9 +22,7 @@ Vanilla js to grab Dom Nodes and use them to my will.
 At the bottom i wrote my own Regex function with .replace() to strip any html characters a user may have used such as (111)111-1111 and then the .concat() function to add the +1 too follow format.  
 Used the conditional (ternary) operator in last line to render outcome to screen or many diffrent errors!
 
-I ran out of time others wise could have done a lot better! Spent about 1 hour 35min-->
 
-Thank you! Rob H. Cell #1-605-277-5371
 
 <!DOCTYPE html>
 <html lang="en">
