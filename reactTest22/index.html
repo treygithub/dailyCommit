@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="number" type="number" value="">
+    <button onclick="printOneThroughFifty()">SUBMIT</button>
+    <script>
+
+        printOneThroughFifty = (num) => {
+            for(i=0; i < num; i++){
+                    if (i == 33) {
+                        console.log("triple")
+                    }
+                    else if (i == 55 ) {
+                        console.log("Quintuple")
+                    } 
+                    else if ( i == 3355) {
+                        console.log("tripleQuintuple")
+                    }
+                    else console.log(i)
+        }
+        }
+
+        printOneThroughFifty(4000);
+
+    </script>
+</body>
+</html>

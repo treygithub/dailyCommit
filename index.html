@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Robert H. Coding Challenge</title>
+</head>
+<body>
+    <div style="width:250px; padding-top:200px; margin:auto">
+      <form id="form1" method="GET">
+        <fieldset >
+          <legend>Enter US Phone Number</legend>
+          <input 
+          required
+          autofocus
+          size="35"
+          id="phoneNumber"  
+          name="number"
+          placeholder="(777) 777-7777 or 6667778888"
+          type="tel" 
+          pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" >
+          <br>
+          <button type="submit" onClick="normalized()">submit</button>
+        </fieldset>
+      </form>
+      <h5 style="text-align:center">E.164 phone number format</h5>
+      <p style="text-align:center" id="echo"></p>
+    </div>
+<script>
+
+normalized = () => {
+  event.preventDefault();
+    let add = "+1";
+    let inpObj = document.getElementById("phoneNumber");
+    if (!inpObj.checkValidity()) {
+        document.getElementById("echo").innerHTML = inpObj.validationMessage;
+    } else {
+    let x = document.getElementById("form1");
+    let number = "";
+    let i;
+    for (i = 0; i < x.length ;i++) {
+       number += x.elements[i].value  ;
+    }
+    number = add.concat(number.replace(/[\(\)\-\.\][undefined]/g,''))
+    return document.getElementById("echo").innerHTML = number.length > 9 ? number : null
+    } 
+} 
+</script>
+</body>
+</html>
